@@ -6,6 +6,8 @@
 //
 
 import UIKit
+//import SeeMoreTextView
+
 extension String {
     // formatting text for currency textField
     func currencyFormatting() -> String {
@@ -26,7 +28,7 @@ class InformacionViewController: UIViewController {
     @IBOutlet weak var textoTxtPrueb: UITextView!
     
     var infoBasica : Countries!
-    var allowMultiline : Bool = true
+    //var seeMoretextView : SeeMoreTextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,9 +99,15 @@ class InformacionViewController: UIViewController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
-            
             self.textoTxtPrueb.text = info
+            /*let str = self.textoTxtPrueb.text
+            self.seeMoretextView.contents = NSAttributedString(string: str!, attributes: [
+                .font: NSFontManager.shared.font(withFamily: "Helvetica", traits: [], weight: 5, size: 14)!
+                   ])
+               // Number of lines to display in collapsed state
+            self.seeMoretextView.collapsedLineCount = 2*/
+            
         }
     }
-
 }
+    
