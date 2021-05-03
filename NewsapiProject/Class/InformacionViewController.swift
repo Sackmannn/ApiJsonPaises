@@ -23,12 +23,12 @@ extension String {
         return ""
     }
 }
+
 class InformacionViewController: UIViewController {
 
     @IBOutlet weak var textoTxtPrueb: UITextView!
     
     var infoBasica : Countries!
-    //var seeMoretextView : SeeMoreTextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +41,13 @@ class InformacionViewController: UIViewController {
         var infoAltSpellings : String = ""
         var infoTimeZones : String = ""
         var infoBorders : String = ""
+        var currencies : Currency!
+
+        for h in infoBasica.currencies{
+            currencies = h
+        }
         
-        let infoTranslation : [String?] = [infoBasica.translations.br, infoBasica.translations.de, infoBasica.translations.es, infoBasica.translations.fa,infoBasica.translations.fr,infoBasica.translations.hr, infoBasica.translations.it,infoBasica.translations.ja,infoBasica.translations.nl,infoBasica.translations.pt]
+        let infoTranslation : [String?] = ["Portuguese: " + infoBasica.translations.br, "Germany: " + infoBasica.translations.de!, "Spanish: " + infoBasica.translations.es!, "Persian: " + infoBasica.translations.fa,"France: " + infoBasica.translations.fr!,"Italian: " + infoBasica.translations.it!,"Japanese:" + infoBasica.translations.ja!]
     
         var infoTranslation2 : String = ""
         
@@ -89,7 +94,9 @@ class InformacionViewController: UIViewController {
                 }
             }
         }
-        let recorrerInfo = ["NAME: " + infoBasica.name, "DOMAIN: " + infoDomain, "CODE: " + infoBasica.alpha2Code, "CODE2: " + infoBasica.alpha3Code, "CODE PHONE NUMBER: " + infoCallingCodes, "CAPITAL: " + infoBasica.capital, "SPELLING: " + infoAltSpellings, "REGION: " + infoBasica.region, "SUBREGION: " + infoBasica.subregion, "POPULATION: " + String(infoBasica.population).currencyFormatting(), "DENOMYN: " + infoBasica.demonym, "TIME ZONE: " + infoTimeZones, "BORDERS: " + infoBorders, "NATIVE NAME: " + infoBasica.nativeName, "NUMERIC CODE: " + infoBasica.numericCode! , "TRANSLATION: " + "\n" + "\n" + infoTranslation2]
+        let currency : String? = "CURRENCIES: "
+        
+        let recorrerInfo = ["NAME: " + infoBasica.name, "DOMAIN: " + infoDomain, "CODE: " + infoBasica.alpha2Code, "CODE2: " + infoBasica.alpha3Code, "CODE PHONE NUMBER: " + infoCallingCodes, "CAPITAL: " + infoBasica.capital, (((currency! + currencies.code! as String?)! + ", " + currencies.name! as String?)! + ", " + currencies.symbol! as String?)! ,"SPELLING: " + infoAltSpellings, "REGION: " + infoBasica.region, "SUBREGION: " + infoBasica.subregion, "POPULATION: " + String(infoBasica.population).currencyFormatting(), "DENOMYN: " + infoBasica.demonym, "TIME ZONE: " + infoTimeZones, "BORDERS: " + infoBorders, "NATIVE NAME: " + infoBasica.nativeName, "NUMERIC CODE: " + infoBasica.numericCode! , "TRANSLATION: " + "\n" + "\n" + infoTranslation2 ]
         
         var info : String = ""
         //Hacer esto para recorrer el array y ver todos los paises y sus cosas intentar hacerlo bonito
@@ -100,14 +107,10 @@ class InformacionViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
             self.textoTxtPrueb.text = info
-            /*let str = self.textoTxtPrueb.text
-            self.seeMoretextView.contents = NSAttributedString(string: str!, attributes: [
-                .font: NSFontManager.shared.font(withFamily: "Helvetica", traits: [], weight: 5, size: 14)!
-                   ])
-               // Number of lines to display in collapsed state
-            self.seeMoretextView.collapsedLineCount = 2*/
             
         }
     }
+
+    
 }
     

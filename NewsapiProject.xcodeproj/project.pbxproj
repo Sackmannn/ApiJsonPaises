@@ -16,7 +16,6 @@
 		CE23BFC32630764500FDCC75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE23BFC12630764500FDCC75 /* LaunchScreen.storyboard */; };
 		CE23BFCE2630764500FDCC75 /* NewsapiProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE23BFCD2630764500FDCC75 /* NewsapiProjectTests.swift */; };
 		CE23BFD92630764500FDCC75 /* NewsapiProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE23BFD82630764500FDCC75 /* NewsapiProjectUITests.swift */; };
-		CE3AAF25263EEA5500D9BD0A /* SeeMoreTextView in Frameworks */ = {isa = PBXBuildFile; productRef = CE3AAF24263EEA5500D9BD0A /* SeeMoreTextView */; };
 		CEBB34C82631A8060097DDEF /* InformacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB34C72631A8060097DDEF /* InformacionViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +60,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE3AAF25263EEA5500D9BD0A /* SeeMoreTextView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +167,6 @@
 			);
 			name = NewsapiProject;
 			packageProductDependencies = (
-				CE3AAF24263EEA5500D9BD0A /* SeeMoreTextView */,
 			);
 			productName = NewsapiProject;
 			productReference = CE23BFB02630764300FDCC75 /* NewsapiProject.app */;
@@ -636,14 +633,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		CE3AAF24263EEA5500D9BD0A /* SeeMoreTextView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE3AAF23263EEA5500D9BD0A /* XCRemoteSwiftPackageReference "SeeMoreTextView" */;
-			productName = SeeMoreTextView;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CE23BFBC2630764300FDCC75 /* NewsapiProject.xcdatamodeld */ = {

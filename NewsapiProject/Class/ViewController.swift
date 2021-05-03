@@ -23,26 +23,15 @@ struct Countries: Codable {
     let nativeName : String
     let numericCode : String?
     var currencies : [Currency]
-    var languages : [Language]
     var translations : Translations
 }
 struct Currency: Codable {
     let code, name, symbol: String?
 }
-struct Language: Codable{
-    let iso6391: String?
-    let iso6392, name, nativeName: String
-    enum CodingKeys: String, CodingKey {
-        case iso6391 = "iso639_1"
-        case iso6392 = "iso639_2"
-        case name, nativeName
-    }
-}
 struct Translations : Codable{
         let de, es, fr, ja: String?
         let it: String?
-        let br, pt: String
-        let nl, hr: String?
+        let br: String
         let fa: String
 }
 
